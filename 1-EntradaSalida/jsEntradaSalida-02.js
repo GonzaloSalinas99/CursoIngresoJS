@@ -5,7 +5,7 @@ y luego mostrarlo por 'alert' al presionar el botón  'mostrar'*/
 	{
 	var dato;
 	 
-	 dato = prompt ("ingrese un dato suyo");
+	 dato = prompt ("ingrese su nombre");
 
 	 alert (dato);
 	}

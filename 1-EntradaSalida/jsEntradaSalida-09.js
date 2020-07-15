@@ -14,7 +14,7 @@ function mostrarAumento()
 
 	porcentaje = sueldo * 0.1;
 
-	resultado = porcentaje + sueldo;
+	resultado = sueldo + porcentaje;
 
 		alert ("el porcentaje que se calculo es el " + porcentaje +"%");
 

@@ -34,7 +34,7 @@ function Circulo ()
 	calculo = (mathPi*2)* radio;
 	resultado= calculo*3;
 
-	alert("la cantidad de alambre que se debe comprar es de " + resultado + " metros");
+	alert("la cantidad de alambre que se debe comprar es de " + resultado.toFixed(2) + " metros");
 
 }
 function Materiales () 
@@ -45,6 +45,7 @@ function Materiales ()
 	var calculo2;
 	var cemento;
 	var cal;
+	
 	largo = txtIdLargo.value;
 	ancho = txtIdAncho.value;
 
