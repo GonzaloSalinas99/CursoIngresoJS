@@ -8,4 +8,4 @@ y luego mostrarlo por 'alert' al presionar el botón  'mostrar'*/
 	 dato = prompt ("ingrese un dato suyo");
 
 	 alert (dato);
-}
+	}

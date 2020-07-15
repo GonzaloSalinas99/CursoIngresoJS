@@ -17,6 +17,6 @@ function SacarResto()
 
 	sacarResto = (numeroDividendo % numeroDivisor);
 		
-		alert ("el resto es " + sacarResto);
+		alert ("el resto de la operacion es " + sacarResto);
 
 }
