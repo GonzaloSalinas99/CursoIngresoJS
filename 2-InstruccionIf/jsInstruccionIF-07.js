@@ -11,7 +11,7 @@ function mostrar()
 
 	if(edad < 18 && estadoCivil != "Soltero")
 	{
-		alert("No podes estar " + estadoCivil + " siendo menor de edad rey");
+		alert("No podes estar " + estadoCivil + " siendo menor de edad");
 	}
 	else
 	{

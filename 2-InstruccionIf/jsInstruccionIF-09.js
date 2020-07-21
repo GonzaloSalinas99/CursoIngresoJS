@@ -1,6 +1,6 @@
 function mostrar()
 {
-    var numeroRandom
+    var numeroRandom;
     
     numeroRandom= Math.floor(Math.random()*((10+1)-1)+1);
 
