@@ -17,14 +17,12 @@ function mostrar()
 		if (numeroRandom>3)
 		{
 			alert ("APROBO");
-		}
-			
+		}	
+		
 		else
 		{
 			alert("VAMOS LA PROXIMA SE PUEDE");
 		}
-
-
 	}
 
 		
