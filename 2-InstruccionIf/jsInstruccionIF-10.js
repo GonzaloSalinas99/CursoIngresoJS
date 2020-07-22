@@ -1,24 +1,20 @@
 function mostrar()
 {
 	
-	var numeroRandom;
+	var notaExamen;
 
-	numeroRandom = Math.floor(Math.random()*((10+1)-1)+1);
+	notaExamen = Math.floor(Math.random()*((10+1)-1)+1);
 
-	alert(numeroRandom);
-
-	if(numeroRandom>8)
+	if(notaExamen>8)
 	{
 			alert("EXCELENTE");
 	}
-			
 	else 
 	{
-		if (numeroRandom>3)
+		if (notaExamen>3)
 		{
 			alert ("APROBO");
-		}	
-		
+		}			
 		else
 		{
 			alert("VAMOS LA PROXIMA SE PUEDE");
