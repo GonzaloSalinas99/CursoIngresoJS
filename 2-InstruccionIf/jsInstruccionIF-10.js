@@ -3,21 +3,21 @@ function mostrar()
 	
 	var notaExamen;
 
-	notaExamen = Math.floor(Math.random()*((10+1)-1)+1);
-
+	notaExamen = Math.floor(Math.random()*10+1);
+	
 	if(notaExamen>8)
 	{
-			alert("EXCELENTE");
+			alert(notaExamen + " EXCELENTE");
 	}
 	else 
 	{
 		if (notaExamen>3)
 		{
-			alert ("APROBO");
+			alert (notaExamen + " APROBO");
 		}			
 		else
 		{
-			alert("VAMOS LA PROXIMA SE PUEDE");
+			alert(notaExamen + " VAMOS LA PROXIMA SE PUEDE");
 		}
 	}
 
