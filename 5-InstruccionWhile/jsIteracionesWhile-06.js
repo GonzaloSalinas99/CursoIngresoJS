@@ -6,6 +6,8 @@ function mostrar()
 
 	contador=0;
 	acumulador=0;
+
+	
 	
 	
 	txtIdSuma.value=acumulador;

@@ -7,33 +7,36 @@ function mostrar()
 	switch(estacionIngresada)
 	{
 		case("Invierno"):
-		switch(destinoIngresado)
-		{
-			case("Bariloche"):
-			validacion="Se viaja";
-			break;
-			default:
-			validacion="No se viaja";
-		}
+			switch(destinoIngresado)
+			{
+				case("Bariloche"):
+					validacion="Se viaja";
+				break;
+				default:
+					validacion="No se viaja";
+			}
+		break;
 		case("Verano"):
-		switch(destinoIngresado)
-		{
-			case("Mar del plata"):
-			case("Cataratas"):
-				validacion="Se viaja";
-				break;
-			default:
-				validacion="No se viaja";
-		}
+			switch(destinoIngresado)
+			{
+				case("Mar del plata"):
+				case("Cataratas"):
+					validacion="Se viaja";
+					break;
+				default:
+					validacion="No se viaja";
+			}
+		break;
 		case("Primavera"):
-		switch(destinoIngresado)
-		{
-			case("Bariloche"):
-				validacion="No se viaja";
-				break;
-			default:
-				validacion="Se viaja";
-		}
+			switch(destinoIngresado)
+			{
+				case("Bariloche"):
+					validacion="No se viaja";
+					break;
+				default:
+					validacion="Se viaja";
+			}
+		break;
 		default:
 			validacion="Se viaja";
 	}
