@@ -9,7 +9,7 @@ for(i=1;i<numeroUsuario;i=i+1)
 {
 	if(numeroUsuario%i==0)
 	{
-		document.write("<br>" + i);
+		document.write("<br>" + i );
 	}
 }
 
