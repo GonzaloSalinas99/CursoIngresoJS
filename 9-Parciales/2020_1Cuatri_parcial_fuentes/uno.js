@@ -4,25 +4,32 @@ function mostrar() {
 	var precio;
 	var marca;
 	var cantidad;
-	var acumuladorTipo;
-	var acumuladorPrecio;
-	var acumuladorMarca;
-	var contadorCantidadBarbijo;
-	var contadorCantidadJabon;
-	var contadorCantidadAlcohol;
+	var fabricante;
+	var acumuladorCantidadBarbijo;
+	var acumuladorCantidadJabon;
+	var acumuladorCantidadAlcohol;
 	var bandera;
 	var minimo;
 	var minimoFabricanteAlcohol;
 	var minimaCantidadAlcohol;
-	var fabricante;
+
+	var cantidadMaxima;
+	var promedio;
 	
-	acumuladorPrecio = 0;
-	contadorCantidad = 0;
-	acumuladorTipo;
+	var contadorAlcohol;
+	var contadorJabon;
+	var contadorBarbijo;
+
+	contadorAlcohol=0;
+	contadorBarbijo=0;
+	contadorJabon=0;	
+
+	
+
+	acumuladorCantidadAlcohol=0;
+	acumuladorCantidadBarbijo=0;
+	acumuladorCantidadJabon=0;
 	bandera=true;
-
-
-
 
 
 	for (var i = 0; i < 2; i++) 
@@ -61,40 +68,59 @@ function mostrar() {
 				bandera=false;
 				minimoFabricanteAlcohol=fabricante;
 				minimaCantidadAlcohol=cantidad;
+				acumuladorCantidadAlcohol+=cantidad;
+				contadorAlcohol=contadorAlcohol+1;
 			}
+		else 
+		{
+			if(productoTipo=="jabon")
+			{
+				acumuladorCantidadJabon+=cantidad;
+				contadorJabon=contadorJabon +1;
+
+			}
+			else
+			{
+				if(productoTipo=="barbijo")
+				{
+					acumuladorCantidadBarbijo+=cantidad;
+					contadorBarbijo=contadorBarbijo+ 1;
+				}
+			}
+		}
 			
 		}
 
 	}	
 	
-	document.write("el precio minimo del alcohol es " + minimo);
-	document.write ("la cantidad de productos es de " + cantidad);
-	document.write("el fabricante es " + minimoFabricanteAlcohol);
-
-
-
-
-
-
-
-
-	/*while (contador < 5) {
-		productoTipo = prompt("Ingrese un tipo de producto pelotudo");
-
-		if (productoTipo == "barbijo" || productoTipo == "alcohol" || productoTipo == "jabon") {
-			alert("perfecto, ingrese otro producto");
-			contador++;
+	if(acumuladorCantidadBarbijo>acumuladorCantidadAlcohol && acumuladorCantidadBarbijo>acumuladorCantidadJabon)
+	{
+		cantidadMaxima=acumuladorCantidadBarbijo;
+		promedio=cantidadMaxima/contadorBarbijo;
+	}
+	else
+	{
+		if(acumuladorCantidadAlcohol>acumuladorCantidadBarbijo && acumuladorCantidadAlcohol>acumuladorCantidadJabon)
+		{
+			cantidadMaxima=acumuladorCantidadAlcohol;
+			promedio=cantidadMaxima/contadorAlcohol
 		}
-		else {
-			if (productoTipo != "barbijo" || productoTipo != "alcohol" || productoTipo != "jabon") {
-				alert("vuelva a ingresar un producto");
+		else
+		{
+			if(acumuladorCantidadJabon>acumuladorCantidadBarbijo && acumuladorCantidadJabon>acumuladorCantidadAlcohol)
+			{
+				cantidadMaxima=acumuladorCantidadJabon;
+				promedio=cantidadMaxima/contadorJabon;
 			}
 		}
+	}
 
-
-		acumulador += productoTipo;
-
-	}*/
+	document.write("el precio minimo del alcohol es " + minimo);
+	document.write("<br>" + "el fabricante es " + minimoFabricanteAlcohol);
+	document.write ("<br>" + "la cantidad de productos es de " + minimaCantidadAlcohol);
+	
+	document.write("<br>" + "el promedio de compra es de " + promedio);
+	document.write("<br>" + "la cantidad de jabones que hay es de " + acumuladorCantidadJabon);
 
 }
 

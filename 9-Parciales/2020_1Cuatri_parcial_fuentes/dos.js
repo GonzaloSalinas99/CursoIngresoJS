@@ -1,65 +1,161 @@
 function mostrar()
 {
   var ingreso;
-  var tipo;
-  var respuesta;
-  respuesta=true;
   var cantidadBolsas;
   var precio;
-  var descuento;
+  var total;
+  var cantidadArena;
+  var cantidadCal;
+  var cantidadCemento;
+  var precioArena;
+  var precioCemento;
+  var precioCal;
+  var tipoProducto;
+  var precioBruto;
+  var contadorBolsas;
+  var productoCaro;
 
+
+
+  var respuesta;
+  respuesta=true;
+
+  cantidadCemento=0;
+  precioCemento=0;
+  
+  cantidadArena=0;
+  precioArena=0;
+  
+  contadorCal=0;
+  precioCal=0;
+
+  
+  
+  
   while(respuesta==true )
   {
-    tipo =prompt("ingrese un tipo de producto");
+    ingreso =prompt("ingrese un tipo de producto");
 
-    while(tipo!="arena" && tipo!= "cal" && tipo!="cemento")
+    while(ingreso!="arena" && ingreso!= "cal" && ingreso!="cemento")
     {
-      tipo=prompt("vuelva a ingresar los tipos");
+      ingreso=prompt("vuelva a ingresar el tipo del producto");
     }
     
-    cantidadBolsas=prompt("ingrese cantidad de bolsas");
+    cantidadBolsas=prompt("ingrese una cantidad de bolsas");
     cantidadBolsas=parseInt(cantidadBolsas);
 
-    while(isNaN(cantidadBolsas))
+    while(isNaN (cantidadBolsas)) 
     {
-      cantidadBolsas=prompt("ingrese una cantidad razonable");
+      cantidadBolsas=prompt("Reingrese una cantidad de bolsas");
+      cantidadBolsas=parseInt(cantidadBolsas);
+      
     }
   
-    precio=prompt("ingrese precio");
+    precio=prompt("ingrese un precio");
     precio=parseInt(precio);
 
     while(isNaN(precio) || precio<1)
     {
-      precio=prompt("ingrese una cantidad razonable");
+      precio=prompt("Reingrese un precio");
     }
-  
-  
-    respuesta = confirm("Desea seguir ingresando??");
-  }
 
-  if(cantidadBolsas>10)
+    
+
+
+   
+   
+    if(ingreso =="cal")
+    {
+        cantidadCal=cantidadCal + cantidadBolsas;
+        precioCal= precioCal +  precio ;
+    }  
+    else
+    {
+      if(ingreso =="cemento")
+      {
+        cantidadCemento=cantidadCemento + cantidadBolsas;
+        precioCemento = precioCemento + precio;
+        
+      }
+      else
+      {
+        if(ingreso =="arena")
+        {
+          cantidadArena=cantidadArena + cantidadBolsas;
+          precioArena = precioArena + precio;
+          
+        }
+      }
+    }
+       
+    respuesta = confirm("Desea seguir ingresando productos??");
+  }
+  
+  contadorBolsas = cantidadArena + cantidadCal + cantidadCemento;
+  
+  total=precio*contadorBolsas;
+  
+  if(contadorBolsas<10)
   {
-    descuento=precio*0.85;
+    precioBruto= precio*contadorBolsas;
+    document.write("debe pagar $" + precioBruto + " porque no tiene descuento");
   }
   else
   {
-    if(cantidadBolsas>30)
+    if(contadorBolsas>10)
     {
-      descuento=precio*0.75;
+      total=total*0.85;
+    }
+    else
+    {
+      if(contadorBolsas>30)
+      {
+        total=total*0.75;
+      }
     }
   }
   
-}
-//Realizar el algoritmo que permita ingresar los datos de una compra productos de la construccion, hasta que el cliente quiera:
-//Tipo validad("arena";"cal";"cemento")
-//Cantidad de bolsas,
-//Precio por bolsa (más de cero ),
-/*
+  if(cantidadCemento>cantidadCal && cantidadCemento>cantidadArena)
+  {
+      tipoProducto="cemento";
+  }
+  else 
+  {
+    if(cantidadCal>cantidadCemento && cantidadCal>cantidadArena)
+    {          
+      tipoProducto="cal";
+    }
+    else
+    {
+      if(cantidadArena>cantidadCemento && cantidadArena>cantidadCal)
+      {              
+        tipoProducto="arena";
+      }
+    }
+  }
 
-Si compro más de 10 bolsas en total tenes 15% de descuento sobre el total a pagar.
-Si compro más de 30 bolsas en total tenes 25% de descuento sobre el total a pagar.
-a) El importe total a pagar , bruto sin descuento y...
-b) el importe total a pagar con descuento(solo si corresponde)
-d) Informar el tipo con mas cantidad de bolsas.
-f) El tipo mas caro
-*/
+  if(precioCemento>precioArena && precioCemento>precioCal)
+  {
+      productoCaro="cemento";
+  }
+  else 
+  {
+    if(precioCal>precioArena && precioCal>precioCal)
+    {          
+      productoCaro="cal";
+    }
+    else
+    {
+      if(precioArena>precioCemento && precioArena>precioCal)
+      {              
+        productoCaro="arena";
+      }
+    }
+  }
+
+  
+  document.write("<br>" + "Debe pagar $" + total + "porque se le hizo un descuento");
+  document.write("<br>" + tipoProducto + " tiene la mayor cantidad de bolsas");
+  document.write("<br>" + productoCaro + " es el tipo de producto mas caro");
+  
+}

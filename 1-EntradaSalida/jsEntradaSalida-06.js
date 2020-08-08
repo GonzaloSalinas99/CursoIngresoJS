@@ -4,18 +4,52 @@ transformarlos a enteros (parseInt) y Sumarlos.
 mostrar el resulto por medio de "ALERT"*/
 function sumar()
 {
-	var numeroUno;
-	var numeroDos;
-	var suma;
 
-	numeroUno = txtIdNumeroUno.value;
-	numeroDos = txtIdNumeroDos.value;
 
-	numeroUno = parseInt (numeroUno);
-	numeroDos = parseInt (numeroDos);
-	
-	suma = (numeroUno + numeroDos);
-	
-	alert ("La suma es " + suma);
+	//MAXIMO CON FOR 
+	(i==0 || maximo<numero)
+	{
+		maximo=numero;
+	} 
+
+	//MINIMO CON FOR
+	(i==0 || minimo>numero)
+	{
+		minimo=numero;
+	} 
+
+	//MAXIMO CON WHILE (BANDERA)
+	var bandera=true;
+	(bandera==true || maximo<numero)
+	{
+		maximo=numero;
+		bandera=false;
+	} 
+
+	//MINIMO CON WHILE (BANDERA)
+	var bandera=true;
+	(bandera==true || minimo>numero)
+	{
+		minimo=numero;
+		bandera=false;
+	} 
+
+	nombre = prompt ("ingrese un nombre")
+	while (!isNaN(nombre))
+	{
+		nombre = prompt ("reingrese un nombre");
+	}
+
+	numero = prompt ("ingrese un numero");
+	numero = parseInt ( numero );
+	while (isNaN ( numero ) )
+	{
+		numero = prompt ("ingrese un numero");
+		numero = parseInt ( numero );
+	}
+
+
+
+
 }
 
